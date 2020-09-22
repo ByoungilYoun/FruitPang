@@ -20,6 +20,7 @@ class LaunchViewController : UIViewController {
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureGradientBackground()
     setUI()
   }
   

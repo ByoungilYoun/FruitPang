@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA25251A51CE00D20DA4 /* Extension.swift */; };
 		0FDC3D462519231600DF42DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D452519231600DF42DF /* AppDelegate.swift */; };
 		0FDC3D4F2519231600DF42DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D4E2519231600DF42DF /* Assets.xcassets */; };
 		0FDC3D522519231600DF42DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D502519231600DF42DF /* LaunchScreen.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F5ADA25251A51CE00D20DA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0FDC3D422519231600DF42DF /* FruitPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDC3D452519231600DF42DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDC3D4E2519231600DF42DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5ADA24251A51B200D20DA4 /* Extension  */ = {
+			isa = PBXGroup;
+			children = (
+				0F5ADA25251A51CE00D20DA4 /* Extension.swift */,
+			);
+			path = "Extension ";
+			sourceTree = "<group>";
+		};
 		0FDC3D392519231600DF42DF = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				0FDC3D452519231600DF42DF /* AppDelegate.swift */,
+				0F5ADA24251A51B200D20DA4 /* Extension  */,
 				0FDC3D5F25192B2000DF42DF /* Model */,
 				0FDC3D5E25192B1C00DF42DF /* View */,
 				0FDC3D5D25192AFB00DF42DF /* Controller */,
@@ -168,6 +179,7 @@
 				0FDC3D462519231600DF42DF /* AppDelegate.swift in Sources */,
 				0FDC3D6225192BAC00DF42DF /* LaunchViewController.swift in Sources */,
 				0FDC3D6C2519326500DF42DF /* HomeViewController.swift in Sources */,
+				0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
