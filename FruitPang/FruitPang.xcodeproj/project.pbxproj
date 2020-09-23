@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1A1EF5251BD388001BB1FF /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1A1EF4251BD388001BB1FF /* MainGameViewController.swift */; };
 		0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA25251A51CE00D20DA4 /* Extension.swift */; };
+		0F5ADA2A251A54DF00D20DA4 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA29251A54DF00D20DA4 /* CustomTextLabel.swift */; };
+		0F5ADA2D251A5BA300D20DA4 /* HomeCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA2C251A5BA300D20DA4 /* HomeCustomButton.swift */; };
 		0FDC3D462519231600DF42DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D452519231600DF42DF /* AppDelegate.swift */; };
 		0FDC3D4F2519231600DF42DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D4E2519231600DF42DF /* Assets.xcassets */; };
 		0FDC3D522519231600DF42DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D502519231600DF42DF /* LaunchScreen.storyboard */; };
@@ -17,7 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1A1EF4251BD388001BB1FF /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
 		0F5ADA25251A51CE00D20DA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0F5ADA29251A54DF00D20DA4 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
+		0F5ADA2C251A5BA300D20DA4 /* HomeCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCustomButton.swift; sourceTree = "<group>"; };
 		0FDC3D422519231600DF42DF /* FruitPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDC3D452519231600DF42DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDC3D4E2519231600DF42DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,12 +45,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1A1EF7251BD905001BB1FF /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				0FDC3D6125192BAC00DF42DF /* LaunchViewController.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		0F1A1EF8251BD915001BB1FF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0FDC3D6B2519326500DF42DF /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0F1A1EF9251BD93E001BB1FF /* MainGame */ = {
+			isa = PBXGroup;
+			children = (
+				0F1A1EF4251BD388001BB1FF /* MainGameViewController.swift */,
+			);
+			path = MainGame;
+			sourceTree = "<group>";
+		};
 		0F5ADA24251A51B200D20DA4 /* Extension  */ = {
 			isa = PBXGroup;
 			children = (
 				0F5ADA25251A51CE00D20DA4 /* Extension.swift */,
 			);
 			path = "Extension ";
+			sourceTree = "<group>";
+		};
+		0F5ADA2F251A5DA900D20DA4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0F5ADA29251A54DF00D20DA4 /* CustomTextLabel.swift */,
+				0F5ADA2C251A5BA300D20DA4 /* HomeCustomButton.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		0FDC3D392519231600DF42DF = {
@@ -81,8 +120,9 @@
 		0FDC3D5D25192AFB00DF42DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0FDC3D6125192BAC00DF42DF /* LaunchViewController.swift */,
-				0FDC3D6B2519326500DF42DF /* HomeViewController.swift */,
+				0F1A1EF7251BD905001BB1FF /* Launch */,
+				0F1A1EF8251BD915001BB1FF /* Home */,
+				0F1A1EF9251BD93E001BB1FF /* MainGame */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,6 +130,7 @@
 		0FDC3D5E25192B1C00DF42DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F5ADA2F251A5DA900D20DA4 /* Home */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,7 +220,10 @@
 				0FDC3D462519231600DF42DF /* AppDelegate.swift in Sources */,
 				0FDC3D6225192BAC00DF42DF /* LaunchViewController.swift in Sources */,
 				0FDC3D6C2519326500DF42DF /* HomeViewController.swift in Sources */,
+				0F1A1EF5251BD388001BB1FF /* MainGameViewController.swift in Sources */,
 				0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */,
+				0F5ADA2A251A54DF00D20DA4 /* CustomTextLabel.swift in Sources */,
+				0F5ADA2D251A5BA300D20DA4 /* HomeCustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

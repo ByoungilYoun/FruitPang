@@ -51,7 +51,7 @@ class LaunchViewController : UIViewController {
     } completion: { (done) in
       if done {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-          let viewController = HomeViewController()
+          let viewController = UINavigationController(rootViewController: HomeViewController())
           viewController.modalPresentationStyle = .fullScreen
           viewController.modalTransitionStyle = .crossDissolve
           self.present(viewController, animated: true, completion: nil)
