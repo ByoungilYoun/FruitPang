@@ -40,9 +40,13 @@ class HomeViewController : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureGradientBackground()
-    setNavi()
     setUI()
     setConstraints()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setNavi()
   }
   //MARK: - setNavi()
   private func setNavi() {

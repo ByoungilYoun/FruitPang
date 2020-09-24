@@ -14,7 +14,7 @@ class CustomTextLabel : UILabel {
     text = title
     textColor = UIColor.white
     textAlignment = .center
-    font = UIFont.boldSystemFont(ofSize: 30)
+    font = UIFont.boldSystemFont(ofSize: 40)
   }
   
   required init?(coder: NSCoder) {

@@ -11,6 +11,10 @@
 		0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA25251A51CE00D20DA4 /* Extension.swift */; };
 		0F5ADA2A251A54DF00D20DA4 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA29251A54DF00D20DA4 /* CustomTextLabel.swift */; };
 		0F5ADA2D251A5BA300D20DA4 /* HomeCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA2C251A5BA300D20DA4 /* HomeCustomButton.swift */; };
+		0FA5C33D251D173A007EF9FC /* MainCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C33C251D173A007EF9FC /* MainCustomButton.swift */; };
+		0FA5C341251D2A81007EF9FC /* EasyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C340251D2A81007EF9FC /* EasyModeViewController.swift */; };
+		0FA5C346251D2A94007EF9FC /* NormalModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C345251D2A94007EF9FC /* NormalModeController.swift */; };
+		0FA5C34A251D2A9D007EF9FC /* HardModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C349251D2A9D007EF9FC /* HardModeController.swift */; };
 		0FDC3D462519231600DF42DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D452519231600DF42DF /* AppDelegate.swift */; };
 		0FDC3D4F2519231600DF42DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D4E2519231600DF42DF /* Assets.xcassets */; };
 		0FDC3D522519231600DF42DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D502519231600DF42DF /* LaunchScreen.storyboard */; };
@@ -24,6 +28,10 @@
 		0F5ADA25251A51CE00D20DA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0F5ADA29251A54DF00D20DA4 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 		0F5ADA2C251A5BA300D20DA4 /* HomeCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCustomButton.swift; sourceTree = "<group>"; };
+		0FA5C33C251D173A007EF9FC /* MainCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomButton.swift; sourceTree = "<group>"; };
+		0FA5C340251D2A81007EF9FC /* EasyModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyModeViewController.swift; sourceTree = "<group>"; };
+		0FA5C345251D2A94007EF9FC /* NormalModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeController.swift; sourceTree = "<group>"; };
+		0FA5C349251D2A9D007EF9FC /* HardModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardModeController.swift; sourceTree = "<group>"; };
 		0FDC3D422519231600DF42DF /* FruitPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDC3D452519231600DF42DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDC3D4E2519231600DF42DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +94,24 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		0FA5C33B251D170C007EF9FC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0FA5C33C251D173A007EF9FC /* MainCustomButton.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0FA5C33F251D2A64007EF9FC /* GameMode */ = {
+			isa = PBXGroup;
+			children = (
+				0FA5C340251D2A81007EF9FC /* EasyModeViewController.swift */,
+				0FA5C345251D2A94007EF9FC /* NormalModeController.swift */,
+				0FA5C349251D2A9D007EF9FC /* HardModeController.swift */,
+			);
+			path = GameMode;
+			sourceTree = "<group>";
+		};
 		0FDC3D392519231600DF42DF = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +149,7 @@
 				0F1A1EF7251BD905001BB1FF /* Launch */,
 				0F1A1EF8251BD915001BB1FF /* Home */,
 				0F1A1EF9251BD93E001BB1FF /* MainGame */,
+				0FA5C33F251D2A64007EF9FC /* GameMode */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5ADA2F251A5DA900D20DA4 /* Home */,
+				0FA5C33B251D170C007EF9FC /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,10 +246,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FDC3D462519231600DF42DF /* AppDelegate.swift in Sources */,
+				0FA5C346251D2A94007EF9FC /* NormalModeController.swift in Sources */,
 				0FDC3D6225192BAC00DF42DF /* LaunchViewController.swift in Sources */,
 				0FDC3D6C2519326500DF42DF /* HomeViewController.swift in Sources */,
 				0F1A1EF5251BD388001BB1FF /* MainGameViewController.swift in Sources */,
 				0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */,
+				0FA5C34A251D2A9D007EF9FC /* HardModeController.swift in Sources */,
+				0FA5C33D251D173A007EF9FC /* MainCustomButton.swift in Sources */,
+				0FA5C341251D2A81007EF9FC /* EasyModeViewController.swift in Sources */,
 				0F5ADA2A251A54DF00D20DA4 /* CustomTextLabel.swift in Sources */,
 				0F5ADA2D251A5BA300D20DA4 /* HomeCustomButton.swift in Sources */,
 			);
