@@ -22,6 +22,7 @@
 		0FDC3D6825192E4C00DF42DF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FDC3D6725192E4C00DF42DF /* SnapKit */; };
 		0FDC3D6C2519326500DF42DF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D6B2519326500DF42DF /* HomeViewController.swift */; };
 		0FEA02002522BA31002F07C4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA01FF2522BA31002F07C4 /* Card.swift */; };
+		0FEA02032522BB3F002F07C4 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA02022522BB3F002F07C4 /* CardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		0FDC3D6125192BAC00DF42DF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		0FDC3D6B2519326500DF42DF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0FEA01FF2522BA31002F07C4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0FEA02022522BB3F002F07C4 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				0FEA01FF2522BA31002F07C4 /* Card.swift */,
+				0FEA02022522BB3F002F07C4 /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				0FDC3D6225192BAC00DF42DF /* LaunchViewController.swift in Sources */,
 				0FDC3D6C2519326500DF42DF /* HomeViewController.swift in Sources */,
 				0F1A1EF5251BD388001BB1FF /* MainGameViewController.swift in Sources */,
+				0FEA02032522BB3F002F07C4 /* CardModel.swift in Sources */,
 				0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */,
 				0FA5C34A251D2A9D007EF9FC /* HardModeController.swift in Sources */,
 				0FEA02002522BA31002F07C4 /* Card.swift in Sources */,
