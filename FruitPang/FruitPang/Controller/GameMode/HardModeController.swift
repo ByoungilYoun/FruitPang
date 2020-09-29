@@ -104,7 +104,7 @@ class HardModeController : UIViewController {
   }
   
   @objc private func gameStart() {
-    print("123")
+    print("hard mode game start")
   }
 }
 

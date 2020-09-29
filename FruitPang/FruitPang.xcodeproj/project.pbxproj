@@ -21,6 +21,7 @@
 		0FDC3D6225192BAC00DF42DF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D6125192BAC00DF42DF /* LaunchViewController.swift */; };
 		0FDC3D6825192E4C00DF42DF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FDC3D6725192E4C00DF42DF /* SnapKit */; };
 		0FDC3D6C2519326500DF42DF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D6B2519326500DF42DF /* HomeViewController.swift */; };
+		0FEA02002522BA31002F07C4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA01FF2522BA31002F07C4 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		0FDC3D532519231600DF42DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FDC3D6125192BAC00DF42DF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		0FDC3D6B2519326500DF42DF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0FEA01FF2522BA31002F07C4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		0FDC3D5F25192B2000DF42DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0FEA01FF2522BA31002F07C4 /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				0F1A1EF5251BD388001BB1FF /* MainGameViewController.swift in Sources */,
 				0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */,
 				0FA5C34A251D2A9D007EF9FC /* HardModeController.swift in Sources */,
+				0FEA02002522BA31002F07C4 /* Card.swift in Sources */,
 				0FA5C33D251D173A007EF9FC /* MainCustomButton.swift in Sources */,
 				0FA5C341251D2A81007EF9FC /* EasyModeViewController.swift in Sources */,
 				0F5ADA2A251A54DF00D20DA4 /* CustomTextLabel.swift in Sources */,

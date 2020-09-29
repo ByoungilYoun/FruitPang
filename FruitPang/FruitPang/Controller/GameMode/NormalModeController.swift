@@ -105,7 +105,7 @@ class NormalModeController : UIViewController {
   }
   
   @objc private func gameStart() {
-    print("123")
+    print("normal mode game start")
   }
 }
   
