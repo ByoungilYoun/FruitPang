@@ -17,4 +17,11 @@ extension UIViewController {
     gradient.frame = view.frame
     view.layer.addSublayer(gradient)
   }
+  
+  func showAlert(_ title : String, _ message : String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+    alert.addAction(alertAction)
+    present(alert, animated: true, completion: nil)
+  }
 }

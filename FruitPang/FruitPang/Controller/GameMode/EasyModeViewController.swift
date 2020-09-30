@@ -46,6 +46,9 @@ class EasyModeViewController : UIViewController {
   
   var timer : Timer?
   var miliseconds : Float = 30 * 1000
+  var model = CardModel()
+  var cardArray = [Card]()
+  var firstFlippedCardIndex : IndexPath?
   
   //MARK: - LifeCycle
   override func viewDidLoad() {
@@ -53,6 +56,7 @@ class EasyModeViewController : UIViewController {
     configureGradientBackground()
     setNavi()
     configureUI()
+    cardArray = model.getEasyCards()
   }
   
   //MARK: - Standard
@@ -73,7 +77,7 @@ class EasyModeViewController : UIViewController {
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.backgroundColor = .clear
-    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    collectionView.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
     
     [timeLabel, secondLabel, gameStartButton ,collectionView].forEach{
       view.addSubview($0)
@@ -103,8 +107,6 @@ class EasyModeViewController : UIViewController {
     }
   }
   
-  
-  
   //MARK: - @objc func
   @objc private func moveBack() {
     navigationController?.popViewController(animated: true)
@@ -112,6 +114,7 @@ class EasyModeViewController : UIViewController {
   
   @objc private func gameStart() {
     timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
+     checkGameEnded()
   }
   
   @objc func timeElapsed() {
@@ -123,6 +126,7 @@ class EasyModeViewController : UIViewController {
     if miliseconds <= 0 {
       timer?.invalidate()
       secondLabel.textColor = .red
+      checkGameEnded()
     }
   }
 }
@@ -130,20 +134,98 @@ class EasyModeViewController : UIViewController {
   //MARK: - UICollectionViewDataSource
 extension EasyModeViewController : UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 12
+    return cardArray.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-    cell.backgroundColor = .link
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
+    let card = cardArray[indexPath.row]
+    cell.setCard(card)
+//    cell.flip()
+//    cell.flipBack()
     return cell
   }
 }
   //MARK: - UICollectionViewDelegate
 extension EasyModeViewController : UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if miliseconds <= 0 {
+      return
+    }
+    
+    let cell = collectionView.cellForItem(at: indexPath) as! CardCell
+    
+    let card = cardArray[indexPath.row]
+    if card.isFlipped == false && card.isMatched == false {
+      cell.flip()
+      card.isFlipped = true
+      
+      if firstFlippedCardIndex == nil {
+        firstFlippedCardIndex = indexPath
+      } else {
+        checkForMatches(indexPath)
+      }
+    }
+  }
   
+  func checkForMatches(_ secondFlippedCardIndex : IndexPath) {
+    let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCell
+    let cardTwoCell = collectionView.cellForItem(at: secondFlippedCardIndex) as? CardCell
+    
+    let cardOne = cardArray[firstFlippedCardIndex!.row]
+    let cardTwo = cardArray[secondFlippedCardIndex.row]
+    
+    if cardOne.imageName == cardTwo.imageName {
+      cardOne.isMatched = true
+      cardTwo.isMatched = true
+      cardOneCell?.remove()
+      cardTwoCell?.remove()
+      checkGameEnded()
+    } else {
+      cardOne.isFlipped = false
+      cardTwo.isFlipped = false
+      cardOneCell?.flipBack()
+      cardTwoCell?.flipBack()
+    }
+    
+    if cardOneCell == nil {
+      collectionView.reloadItems(at: [firstFlippedCardIndex!])
+    }
+    firstFlippedCardIndex = nil
+  }
+  
+  func checkGameEnded() {
+    var isWon = true
+    
+    for card in cardArray {
+      if card.isMatched == false {
+      isWon = false
+      break
+      }
+    }
+    
+    var title = ""
+    var message = ""
+    
+    if isWon == true {
+      if miliseconds > 0 {
+        timer?.invalidate()
+      }
+      title = "축하합니다"
+      message = "모두 맞추셨어요!"
+    } else {
+      if miliseconds > 0 {
+        return
+      }
+      title = "아쉬워요"
+      message = "모두 못맞추셨네요"
+    }
+    showAlert(title, message)
+  } 
+
 }
 
+  //MARK: - UICollectionViewDelegateFlowLayout
 extension EasyModeViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return Standard.standard
