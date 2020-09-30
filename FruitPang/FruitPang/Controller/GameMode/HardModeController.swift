@@ -33,15 +33,6 @@ class HardModeController : UIViewController {
     return lb
   }()
   
-  private let gameStartButton : UIButton = {
-    let bt = UIButton()
-    bt.setTitle("게임 시작", for: .normal)
-    bt.backgroundColor = .link
-    bt.setTitleColor(.white, for: .normal)
-    bt.layer.cornerRadius = 20
-    bt.addTarget(self, action: #selector(gameStart), for: .touchUpInside)
-    return bt
-  }()
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,6 +52,9 @@ class HardModeController : UIViewController {
     let image = UIImage(systemName: "arrow.left")
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(moveBack))
     navigationItem.leftBarButtonItem?.tintColor = .white
+    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "게임 시작", style: .plain, target: self, action: #selector(gameStart))
+    navigationItem.rightBarButtonItem?.tintColor = .white
   }
   
   //MARK: - configureUI()
@@ -69,28 +63,22 @@ class HardModeController : UIViewController {
     collectionView.delegate = self
     collectionView.backgroundColor = .clear
     collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    collectionView.isScrollEnabled = false
     
-    [timeLabel, secondLabel, gameStartButton ,collectionView].forEach{
+    [timeLabel, secondLabel ,collectionView].forEach{
       view.addSubview($0)
     }
     
     timeLabel.snp.makeConstraints {
       $0.top.equalToSuperview().offset(view.frame.size.height / 15)
-      $0.trailing.equalToSuperview().offset(-(view.frame.size.width / 5))
+      $0.leading.equalToSuperview().offset(view.frame.size.width / 3.5)
     }
     
     secondLabel.snp.makeConstraints {
       $0.top.equalToSuperview().offset(view.frame.size.height / 15)
       $0.leading.equalTo(timeLabel.snp.trailing).offset(5)
     }
-    
-    gameStartButton.snp.makeConstraints {
-      $0.centerX.equalToSuperview()
-      $0.top.equalTo(timeLabel.snp.bottom)
-      $0.width.equalTo(100)
-      $0.height.equalTo(50)
-    }
-    
+  
     collectionView.snp.makeConstraints {
       $0.top.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.8)
       $0.leading.trailing.equalToSuperview()
