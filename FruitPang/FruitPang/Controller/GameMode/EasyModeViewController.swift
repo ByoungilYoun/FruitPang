@@ -44,6 +44,9 @@ class EasyModeViewController : UIViewController {
     return bt
   }()
   
+  var timer : Timer?
+  var miliseconds : Float = 30 * 1000
+  
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -108,7 +111,19 @@ class EasyModeViewController : UIViewController {
   }
   
   @objc private func gameStart() {
-    print("easy mode game start")
+    timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
+  }
+  
+  @objc func timeElapsed() {
+    miliseconds -= 1
+    
+    let seconds = String(format: "%.2f", miliseconds / 1000)
+    secondLabel.text = "\(seconds)"
+    
+    if miliseconds <= 0 {
+      timer?.invalidate()
+      secondLabel.textColor = .red
+    }
   }
 }
 
