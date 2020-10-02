@@ -113,6 +113,7 @@ class EasyModeViewController : UIViewController {
   }
   
   @objc private func gameStart() {
+    guard ((timer?.isValid) == nil) else {return}
     timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
      checkGameEnded()
   }

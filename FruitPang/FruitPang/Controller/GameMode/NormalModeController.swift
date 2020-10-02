@@ -108,6 +108,7 @@ class NormalModeController : UIViewController {
   }
   
   @objc private func gameStart() {
+    guard ((timer?.isValid) == nil) else {return}
     timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
   }
   
