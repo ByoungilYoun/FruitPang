@@ -35,6 +35,9 @@ class HardModeController : UIViewController {
   
   var timer : Timer?
   var miliseconds : Float = 50 * 1000
+  var model = CardModel()
+  var cardArray = [Card]()
+  var firstFlippedCardIndex : IndexPath?
   
   //MARK: - LifeCycle
   override func viewDidLoad() {
@@ -42,6 +45,7 @@ class HardModeController : UIViewController {
     configureGradientBackground()
     setNavi()
     configureUI()
+    cardArray = model.getHardCards()
   }
   
   //MARK: - Standard
@@ -65,7 +69,7 @@ class HardModeController : UIViewController {
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.backgroundColor = .clear
-    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    collectionView.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
     collectionView.isScrollEnabled = false
     
     [timeLabel, secondLabel ,collectionView].forEach{
@@ -108,6 +112,7 @@ class HardModeController : UIViewController {
     if miliseconds <= 0 {
       timer?.invalidate()
       secondLabel.textColor = .red
+      checkGameEnded()
     }
   }
 }
@@ -115,18 +120,92 @@ class HardModeController : UIViewController {
 //MARK: - UICollectionViewDataSource
 extension HardModeController : UICollectionViewDataSource {
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-  return 20
+  return cardArray.count
 }
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-  cell.backgroundColor = .link
+  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
+  let card = cardArray[indexPath.row]
+  cell.setCard(card)
   return cell
 }
 }
 //MARK: - UICollectionViewDelegate
 extension HardModeController : UICollectionViewDelegate {
-
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if miliseconds <= 0 {
+      return
+    }
+    
+    let cell = collectionView.cellForItem(at: indexPath) as! CardCell
+    
+    let card = cardArray[indexPath.row]
+    if card.isFlipped == false && card.isMatched == false {
+      cell.flip()
+      card.isFlipped = true
+      
+      if firstFlippedCardIndex == nil {
+        firstFlippedCardIndex = indexPath
+      } else {
+        checkForMatches(indexPath)
+      }
+    }
+  }
+  
+  func checkForMatches(_ secondFlippedCardIndex : IndexPath) {
+    let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCell
+    let cardTwoCell = collectionView.cellForItem(at: secondFlippedCardIndex) as? CardCell
+    
+    let cardOne = cardArray[firstFlippedCardIndex!.row]
+    let cardTwo = cardArray[secondFlippedCardIndex.row]
+    
+    if cardOne.imageName == cardTwo.imageName {
+      cardOne.isMatched = true
+      cardTwo.isMatched = true
+      cardOneCell?.remove()
+      cardTwoCell?.remove()
+      checkGameEnded()
+    } else {
+      cardOne.isFlipped = false
+      cardTwo.isFlipped = false
+      cardOneCell?.flipBack()
+      cardTwoCell?.flipBack()
+    }
+    
+    if cardOneCell == nil {
+      collectionView.reloadItems(at: [firstFlippedCardIndex!])
+    }
+    firstFlippedCardIndex = nil
+  }
+  
+  func checkGameEnded() {
+    var isWon = true
+    
+    for card in cardArray {
+      if card.isMatched == false {
+        isWon = false
+        break
+      }
+    }
+    
+    var title = ""
+    var message = ""
+    
+    if isWon == true {
+      if miliseconds > 0 {
+        timer?.invalidate()
+      }
+      title = "축하합니다"
+      message = "모두 맞추셨어요!"
+    } else {
+      if miliseconds > 0 {
+        return
+      }
+      title = "아쉬워요"
+      message = "모두 못맞추셨네요"
+    }
+    showAlert(title, message)
+  }
 }
 
 extension HardModeController : UICollectionViewDelegateFlowLayout {
