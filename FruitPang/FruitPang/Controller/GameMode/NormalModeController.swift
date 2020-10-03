@@ -48,6 +48,7 @@ class NormalModeController : UIViewController {
   var model = CardModel()
   var cardArray = [Card]()
   var firstFlippedCardIndex : IndexPath?
+  var buttonClicked : Bool = false
   
   //MARK: - LifeCycle
   override func viewDidLoad() {
@@ -113,7 +114,10 @@ class NormalModeController : UIViewController {
   
   @objc private func gameStart() {
     guard ((timer?.isValid) == nil) else {return}
+    buttonClicked = true
+    
     timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+    checkGameEnded()
   }
   
   @objc private func timerElapsed() {
@@ -140,6 +144,15 @@ extension NormalModeController : UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
     let card = cardArray[indexPath.row]
     cell.setCard(card)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      if self.buttonClicked {
+        cell.flip()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+          cell.flipBack()
+        }
+      }
+    }
     return cell
   }
 }

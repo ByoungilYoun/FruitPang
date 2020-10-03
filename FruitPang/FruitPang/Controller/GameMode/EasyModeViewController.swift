@@ -49,6 +49,7 @@ class EasyModeViewController : UIViewController {
   var model = CardModel()
   var cardArray = [Card]()
   var firstFlippedCardIndex : IndexPath?
+  var buttonClicked : Bool = false
   
   //MARK: - LifeCycle
   override func viewDidLoad() {
@@ -113,7 +114,9 @@ class EasyModeViewController : UIViewController {
   }
   
   @objc private func gameStart() {
-    guard ((timer?.isValid) == nil) else {return}
+    guard ((timer?.isValid) == nil) else { return }
+    buttonClicked = true
+    
     timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
      checkGameEnded()
   }
@@ -142,8 +145,15 @@ extension EasyModeViewController : UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
     let card = cardArray[indexPath.row]
     cell.setCard(card)
-//    cell.flip()
-//    cell.flipBack()
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      if self.buttonClicked {
+        cell.flip()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+          cell.flipBack()
+        }
+      }
+    }
     return cell
   }
 }
