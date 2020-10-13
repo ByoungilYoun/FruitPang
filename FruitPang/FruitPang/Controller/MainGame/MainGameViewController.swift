@@ -10,10 +10,20 @@ import UIKit
 class MainGameViewController : UIViewController {
   
   //MARK: - Properties
+  
+  private let welcomeLabel : UILabel = {
+    let lb = UILabel()
+    let attributeTitle = NSMutableAttributedString(string: "환영합니다!🙌🏻\n", attributes: [.font : UIFont(name: "AppleSDGothicNeo-Regular", size: 24)!,  .foregroundColor : UIColor.white])
+    attributeTitle.append(NSAttributedString(string: "기억력을 향상시켜보세요!🤔", attributes: [.font : UIFont(name: "AppleSDGothicNeo-Regular", size: 18)!, .foregroundColor : UIColor.white]))
+    lb.attributedText = attributeTitle
+    lb.numberOfLines = 2
+    return lb
+  }()
+  
   private let easyButton : MainCustomButton = {
     let bt = MainCustomButton()
     bt.title = "Easy"
-    bt.color = UIColor.link
+    bt.color = UIColor.clear
     bt.addTarget(self, action: #selector(goToEasyMode), for: .touchUpInside)
     return bt
   }()
@@ -21,7 +31,7 @@ class MainGameViewController : UIViewController {
   private let normalButton : MainCustomButton = {
     let bt = MainCustomButton()
     bt.title = "Normal"
-    bt.color = UIColor.link
+    bt.color = UIColor.clear
     bt.addTarget(self, action: #selector(goToNormalMode), for: .touchUpInside)
     return bt
   }()
@@ -29,7 +39,7 @@ class MainGameViewController : UIViewController {
   private let hardButton : MainCustomButton = {
     let bt = MainCustomButton()
     bt.title = "Hard"
-    bt.color = UIColor.link
+    bt.color = UIColor.clear
     bt.addTarget(self, action: #selector(goToHardMode), for: .touchUpInside)
     return bt
   }()
@@ -56,6 +66,15 @@ class MainGameViewController : UIViewController {
   
   //MARK: - setConstraints()
   private func configureUI() {
+    view.addSubview(welcomeLabel)
+    
+    let height = view.frame.size.height
+    
+    welcomeLabel.snp.makeConstraints {
+      $0.top.equalTo(view.safeAreaLayoutGuide).offset(height / 15)
+      $0.leading.equalToSuperview().offset(20)
+    }
+    
     let stackView = UIStackView(arrangedSubviews: [easyButton, normalButton, hardButton])
     stackView.axis = .vertical
     stackView.spacing = 30
