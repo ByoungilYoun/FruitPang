@@ -23,6 +23,7 @@ class HomeViewController : UIViewController {
     bt.title = "게임 설명"
     bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
     bt.color = UIColor.link
+    bt.addTarget(self, action: #selector(movtToGameInfoVC), for: .touchUpInside)
     return bt
   }()
   
@@ -91,6 +92,12 @@ class HomeViewController : UIViewController {
     let controller = MainGameViewController()
     controller.modalPresentationStyle = .fullScreen
     controller.modalTransitionStyle = .coverVertical
+    navigationController?.pushViewController(controller, animated: true)
+  }
+  
+  @objc func movtToGameInfoVC() {
+    let controller = GameInfoViewController()
+    controller.modalPresentationStyle = .fullScreen
     navigationController?.pushViewController(controller, animated: true)
   }
 }

@@ -11,6 +11,7 @@
 		0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA25251A51CE00D20DA4 /* Extension.swift */; };
 		0F5ADA2A251A54DF00D20DA4 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA29251A54DF00D20DA4 /* CustomTextLabel.swift */; };
 		0F5ADA2D251A5BA300D20DA4 /* HomeCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5ADA2C251A5BA300D20DA4 /* HomeCustomButton.swift */; };
+		0F7B8F6B253649F30003B2EB /* GameInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B8F6A253649F30003B2EB /* GameInfoViewController.swift */; };
 		0FA5C33D251D173A007EF9FC /* MainCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C33C251D173A007EF9FC /* MainCustomButton.swift */; };
 		0FA5C341251D2A81007EF9FC /* EasyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C340251D2A81007EF9FC /* EasyModeViewController.swift */; };
 		0FA5C346251D2A94007EF9FC /* NormalModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C345251D2A94007EF9FC /* NormalModeController.swift */; };
@@ -31,6 +32,7 @@
 		0F5ADA25251A51CE00D20DA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0F5ADA29251A54DF00D20DA4 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 		0F5ADA2C251A5BA300D20DA4 /* HomeCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCustomButton.swift; sourceTree = "<group>"; };
+		0F7B8F6A253649F30003B2EB /* GameInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoViewController.swift; sourceTree = "<group>"; };
 		0FA5C33C251D173A007EF9FC /* MainCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomButton.swift; sourceTree = "<group>"; };
 		0FA5C340251D2A81007EF9FC /* EasyModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyModeViewController.swift; sourceTree = "<group>"; };
 		0FA5C345251D2A94007EF9FC /* NormalModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		0F7B8F69253649DC0003B2EB /* GameInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0F7B8F6A253649F30003B2EB /* GameInfoViewController.swift */,
+			);
+			path = GameInfo;
+			sourceTree = "<group>";
+		};
 		0FA5C33B251D170C007EF9FC /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 			children = (
 				0F1A1EF7251BD905001BB1FF /* Launch */,
 				0F1A1EF8251BD915001BB1FF /* Home */,
+				0F7B8F69253649DC0003B2EB /* GameInfo */,
 				0F1A1EF9251BD93E001BB1FF /* MainGame */,
 				0FA5C33F251D2A64007EF9FC /* GameMode */,
 			);
@@ -271,6 +282,7 @@
 				0F5ADA26251A51CE00D20DA4 /* Extension.swift in Sources */,
 				0FEA02082522D3E6002F07C4 /* CardCell.swift in Sources */,
 				0FA5C34A251D2A9D007EF9FC /* HardModeController.swift in Sources */,
+				0F7B8F6B253649F30003B2EB /* GameInfoViewController.swift in Sources */,
 				0FEA02002522BA31002F07C4 /* Card.swift in Sources */,
 				0FA5C33D251D173A007EF9FC /* MainCustomButton.swift in Sources */,
 				0FA5C341251D2A81007EF9FC /* EasyModeViewController.swift in Sources */,
