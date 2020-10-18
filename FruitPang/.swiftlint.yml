@@ -12,4 +12,5 @@ disabled_rules :
  - vertical_whitespace
  - for_where
  - force_cast
- 
+excluded :
+ - Pods 
