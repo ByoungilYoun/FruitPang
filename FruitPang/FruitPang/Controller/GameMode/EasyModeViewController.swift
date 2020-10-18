@@ -38,7 +38,7 @@ class EasyModeViewController : UIViewController {
     let bt = UIButton()
     bt.setTitle("게임 시작", for: .normal)
     bt.backgroundColor = .systemGreen
-    bt.setTitleColor(.white, for: .normal)
+    bt.setTitleColor(.black, for: .normal)
     bt.layer.cornerRadius = 20
     bt.addTarget(self, action: #selector(gameStart), for: .touchUpInside)
     return bt
@@ -118,7 +118,7 @@ class EasyModeViewController : UIViewController {
     buttonClicked = true
     
     timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timeElapsed), userInfo: nil, repeats: true)
-     checkGameEnded()
+    checkGameEnded()
   }
   
   @objc func timeElapsed() {
@@ -135,7 +135,7 @@ class EasyModeViewController : UIViewController {
   }
 }
 
-  //MARK: - UICollectionViewDataSource
+//MARK: - UICollectionViewDataSource
 extension EasyModeViewController : UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return cardArray.count
@@ -145,7 +145,7 @@ extension EasyModeViewController : UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
     let card = cardArray[indexPath.row]
     cell.setCard(card)
-
+    
     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
       if self.buttonClicked {
         cell.flip()
@@ -157,7 +157,7 @@ extension EasyModeViewController : UICollectionViewDataSource {
     return cell
   }
 }
-  //MARK: - UICollectionViewDelegate
+//MARK: - UICollectionViewDelegate
 extension EasyModeViewController : UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if miliseconds <= 0 {
@@ -210,8 +210,8 @@ extension EasyModeViewController : UICollectionViewDelegate {
     
     for card in cardArray {
       if card.isMatched == false {
-      isWon = false
-      break
+        isWon = false
+        break
       }
     }
     
@@ -233,10 +233,9 @@ extension EasyModeViewController : UICollectionViewDelegate {
     }
     showAlert(title, message)
   } 
-
 }
 
-  //MARK: - UICollectionViewDelegateFlowLayout
+//MARK: - UICollectionViewDelegateFlowLayout
 extension EasyModeViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return Standard.standard

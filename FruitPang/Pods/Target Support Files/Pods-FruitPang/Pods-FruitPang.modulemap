@@ -1,0 +1,6 @@
+framework module Pods_FruitPang {
+  umbrella header "Pods-FruitPang-umbrella.h"
+
+  export *
+  module * { export * }
+}

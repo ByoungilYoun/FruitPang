@@ -39,7 +39,7 @@ class CardModel {
     return generatedCardsArray
   }
   
- //MARK: - getNormalCards()
+  //MARK: - getNormalCards()
   func getNormalCards() -> [Card] {
     var generatedNumbersArray = [Int]()
     var generatedCardsArray = [Card]()

@@ -71,7 +71,7 @@ class GameInfoViewController : UIViewController {
     navigationController?.navigationBar.isHidden = false
     navigationController?.navigationBar.prefersLargeTitles = true
     title = "게임 설명"
-      
+    
     let image = UIImage(systemName: "arrow.left")
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(moveBack))
     navigationItem.leftBarButtonItem?.tintColor = .white
@@ -84,7 +84,7 @@ class GameInfoViewController : UIViewController {
     stackView.axis = .vertical
     stackView.spacing = 20
     view.addSubview(stackView)
-
+    
     
     stackView.snp.makeConstraints {
       $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)

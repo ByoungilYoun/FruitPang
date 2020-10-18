@@ -86,14 +86,14 @@ class HardModeController : UIViewController {
       $0.top.equalToSuperview().offset(view.frame.size.height / 15)
       $0.leading.equalTo(timeLabel.snp.trailing).offset(5)
     }
-  
+    
     collectionView.snp.makeConstraints {
       $0.top.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.8)
       $0.leading.trailing.equalToSuperview()
       $0.bottom.equalTo(view.safeAreaLayoutGuide)
     }
   }
-
+  
   //MARK: - @objc func
   @objc private func moveBack() {
     navigationController?.popViewController(animated: true)
@@ -123,25 +123,25 @@ class HardModeController : UIViewController {
 
 //MARK: - UICollectionViewDataSource
 extension HardModeController : UICollectionViewDataSource {
-func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-  return cardArray.count
-}
-
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
-  let card = cardArray[indexPath.row]
-  cell.setCard(card)
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return cardArray.count
+  }
   
-  DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-    if self.buttonClicked {
-      cell.flip()
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-        cell.flipBack()
-       }
-     }
-   }
-   return cell
- }
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
+    let card = cardArray[indexPath.row]
+    cell.setCard(card)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      if self.buttonClicked {
+        cell.flip()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+          cell.flipBack()
+        }
+      }
+    }
+    return cell
+  }
 }
 //MARK: - UICollectionViewDelegate
 extension HardModeController : UICollectionViewDelegate {
@@ -222,22 +222,22 @@ extension HardModeController : UICollectionViewDelegate {
 }
 
 extension HardModeController : UICollectionViewDelegateFlowLayout {
-func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-  return Standard.standard
-}
-
-func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-  return Standard.standard
-}
-
-func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-  return Standard.inset
-}
-
-func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-  let width = view.frame.size.width - Standard.inset.left - Standard.inset.right - (Standard.standard * 3)
-  let realWidth = width / 4
-  return CGSize(width: realWidth, height: 100)
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return Standard.standard
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return Standard.standard
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return Standard.inset
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = view.frame.size.width - Standard.inset.left - Standard.inset.right - (Standard.standard * 3)
+    let realWidth = width / 4
+    return CGSize(width: realWidth, height: 100)
   }
 }
 

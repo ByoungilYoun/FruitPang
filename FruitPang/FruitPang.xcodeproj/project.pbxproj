@@ -20,11 +20,12 @@
 		0FDC3D4F2519231600DF42DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D4E2519231600DF42DF /* Assets.xcassets */; };
 		0FDC3D522519231600DF42DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D502519231600DF42DF /* LaunchScreen.storyboard */; };
 		0FDC3D6225192BAC00DF42DF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D6125192BAC00DF42DF /* LaunchViewController.swift */; };
-		0FDC3D6825192E4C00DF42DF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FDC3D6725192E4C00DF42DF /* SnapKit */; };
+		0FDC3D6825192E4C00DF42DF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0FDC3D6725192E4C00DF42DF /* SwiftPackageProductDependency */; };
 		0FDC3D6C2519326500DF42DF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D6B2519326500DF42DF /* HomeViewController.swift */; };
 		0FEA02002522BA31002F07C4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA01FF2522BA31002F07C4 /* Card.swift */; };
 		0FEA02032522BB3F002F07C4 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA02022522BB3F002F07C4 /* CardModel.swift */; };
 		0FEA02082522D3E6002F07C4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA02072522D3E6002F07C4 /* CardCell.swift */; };
+		2ACB366E77D1322B00D6D240 /* Pods_FruitPang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE26EDC9E0F9BE5C9EB06AC7 /* Pods_FruitPang.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,9 @@
 		0FEA01FF2522BA31002F07C4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0FEA02022522BB3F002F07C4 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		0FEA02072522D3E6002F07C4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		119F1D23B5B9D89D87DA1C51 /* Pods-FruitPang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruitPang.debug.xcconfig"; path = "Target Support Files/Pods-FruitPang/Pods-FruitPang.debug.xcconfig"; sourceTree = "<group>"; };
+		76DA1A7B945AA93921A7483D /* Pods-FruitPang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruitPang.release.xcconfig"; path = "Target Support Files/Pods-FruitPang/Pods-FruitPang.release.xcconfig"; sourceTree = "<group>"; };
+		EE26EDC9E0F9BE5C9EB06AC7 /* Pods_FruitPang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruitPang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +58,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FDC3D6825192E4C00DF42DF /* SnapKit in Frameworks */,
+				0FDC3D6825192E4C00DF42DF /* BuildFile in Frameworks */,
+				2ACB366E77D1322B00D6D240 /* Pods_FruitPang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9B70F83CE4F9825C7DF40B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE26EDC9E0F9BE5C9EB06AC7 /* Pods_FruitPang.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0F1A1EF7251BD905001BB1FF /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +146,8 @@
 			children = (
 				0FDC3D442519231600DF42DF /* FruitPang */,
 				0FDC3D432519231600DF42DF /* Products */,
+				527BCD006513F4D6CDAF73F8 /* Pods */,
+				0A9B70F83CE4F9825C7DF40B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +213,16 @@
 			path = CardCell;
 			sourceTree = "<group>";
 		};
+		527BCD006513F4D6CDAF73F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				119F1D23B5B9D89D87DA1C51 /* Pods-FruitPang.debug.xcconfig */,
+				76DA1A7B945AA93921A7483D /* Pods-FruitPang.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FDC3D562519231600DF42DF /* Build configuration list for PBXNativeTarget "FruitPang" */;
 			buildPhases = (
+				643A5AA3251217FF302A9BEE /* [CP] Check Pods Manifest.lock */,
 				0FDC3D3E2519231600DF42DF /* Sources */,
 				0FDC3D3F2519231600DF42DF /* Frameworks */,
 				0FDC3D402519231600DF42DF /* Resources */,
@@ -215,7 +241,7 @@
 			);
 			name = FruitPang;
 			packageProductDependencies = (
-				0FDC3D6725192E4C00DF42DF /* SnapKit */,
+				0FDC3D6725192E4C00DF42DF /* SwiftPackageProductDependency */,
 			);
 			productName = FruitPang;
 			productReference = 0FDC3D422519231600DF42DF /* FruitPang.app */;
@@ -245,7 +271,7 @@
 			);
 			mainGroup = 0FDC3D392519231600DF42DF;
 			packageReferences = (
-				0FDC3D6625192E4C00DF42DF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0FDC3D6625192E4C00DF42DF /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 0FDC3D432519231600DF42DF /* Products */;
 			projectDirPath = "";
@@ -267,6 +293,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		643A5AA3251217FF302A9BEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FruitPang-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0FDC3D3E2519231600DF42DF /* Sources */ = {
@@ -423,6 +474,7 @@
 		};
 		0FDC3D572519231600DF42DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119F1D23B5B9D89D87DA1C51 /* Pods-FruitPang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +495,7 @@
 		};
 		0FDC3D582519231600DF42DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76DA1A7B945AA93921A7483D /* Pods-FruitPang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -485,7 +538,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0FDC3D6625192E4C00DF42DF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		0FDC3D6625192E4C00DF42DF /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -496,9 +549,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0FDC3D6725192E4C00DF42DF /* SnapKit */ = {
+		0FDC3D6725192E4C00DF42DF /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0FDC3D6625192E4C00DF42DF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 0FDC3D6625192E4C00DF42DF /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

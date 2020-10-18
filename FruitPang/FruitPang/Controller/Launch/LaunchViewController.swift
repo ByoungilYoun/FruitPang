@@ -58,7 +58,5 @@ class LaunchViewController : UIViewController {
         }
       }
     }
-
   }
-  
 }

@@ -51,7 +51,7 @@ class MainGameViewController : UIViewController {
     setNavi()
     configureUI()
   }
-
+  
   //MARK: - setNavi()
   private func setNavi() {
     navigationController?.navigationBar.isHidden = false
