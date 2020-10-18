@@ -23,7 +23,7 @@ class MainGameViewController : UIViewController {
   private let easyButton : MainCustomButton = {
     let bt = MainCustomButton()
     bt.title = "Easy"
-    bt.color = UIColor.clear
+    bt.color = UIColor.systemGreen
     bt.addTarget(self, action: #selector(goToEasyMode), for: .touchUpInside)
     return bt
   }()
@@ -31,7 +31,7 @@ class MainGameViewController : UIViewController {
   private let normalButton : MainCustomButton = {
     let bt = MainCustomButton()
     bt.title = "Normal"
-    bt.color = UIColor.clear
+    bt.color = UIColor.systemIndigo
     bt.addTarget(self, action: #selector(goToNormalMode), for: .touchUpInside)
     return bt
   }()
@@ -39,7 +39,7 @@ class MainGameViewController : UIViewController {
   private let hardButton : MainCustomButton = {
     let bt = MainCustomButton()
     bt.title = "Hard"
-    bt.color = UIColor.clear
+    bt.color = UIColor.systemRed
     bt.addTarget(self, action: #selector(goToHardMode), for: .touchUpInside)
     return bt
   }()
@@ -82,8 +82,8 @@ class MainGameViewController : UIViewController {
     
     stackView.snp.makeConstraints {
       $0.top.equalTo(view.safeAreaLayoutGuide).multipliedBy(2)
-      $0.leading.equalToSuperview().offset(20)
-      $0.trailing.equalToSuperview().offset(-20)
+      $0.leading.equalToSuperview().offset(100)
+      $0.trailing.equalToSuperview().offset(-100)
     }
   }
   

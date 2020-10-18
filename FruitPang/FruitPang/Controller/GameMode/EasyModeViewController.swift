@@ -37,7 +37,7 @@ class EasyModeViewController : UIViewController {
   private let gameStartButton : UIButton = {
     let bt = UIButton()
     bt.setTitle("게임 시작", for: .normal)
-    bt.backgroundColor = .link
+    bt.backgroundColor = .systemGreen
     bt.setTitleColor(.white, for: .normal)
     bt.layer.cornerRadius = 20
     bt.addTarget(self, action: #selector(gameStart), for: .touchUpInside)

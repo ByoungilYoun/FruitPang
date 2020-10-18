@@ -22,7 +22,8 @@ class HomeViewController : UIViewController {
     let bt = HomeCustomButton()
     bt.title = "게임 설명"
     bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-    bt.color = UIColor.link
+    bt.color = UIColor.systemPink
+    bt.setTitleColor(.white, for: .normal)
     bt.addTarget(self, action: #selector(movtToGameInfoVC), for: .touchUpInside)
     return bt
   }()
@@ -31,7 +32,8 @@ class HomeViewController : UIViewController {
     let bt = HomeCustomButton()
     bt.title = "게임 시작"
     bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-    bt.color = UIColor.link
+    bt.color = UIColor.systemOrange
+    bt.setTitleColor(.black, for: .normal)
     bt.addTarget(self, action: #selector(moveToGameVC), for: .touchUpInside)
     return bt
   }()
@@ -83,8 +85,8 @@ class HomeViewController : UIViewController {
     
     stackView.snp.makeConstraints {
       $0.top.equalTo(titleLabel.snp.bottom).multipliedBy(1.5)
-      $0.leading.equalToSuperview().offset(20)
-      $0.trailing.equalToSuperview().offset(-20)
+      $0.leading.equalToSuperview().offset(100)
+      $0.trailing.equalToSuperview().offset(-100)
     }
   }
   

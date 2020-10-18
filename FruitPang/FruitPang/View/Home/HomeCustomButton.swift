@@ -26,7 +26,7 @@ class HomeCustomButton : UIButton {
   override init(frame: CGRect) {
     super.init(frame: .zero)
     layer.cornerRadius = 15
-    setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
+//    setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
     setHeight()
   }
   

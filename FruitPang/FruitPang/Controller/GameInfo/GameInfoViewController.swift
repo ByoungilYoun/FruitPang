@@ -39,7 +39,16 @@ class GameInfoViewController : UIViewController {
   
   private let fourthInfo : UILabel = {
     let lb = UILabel()
-    lb.text = "4. 게임을 통해 기억력을 향상시켜보세요!🍑"
+    lb.text = "4. 게임시작 버튼을 누르면 기록 시작!🥝"
+    lb.textColor = .white
+    lb.font = UIFont.systemFont(ofSize: 20)
+    lb.numberOfLines = 2
+    return lb
+  }()
+  
+  private let fifthInfo : UILabel = {
+    let lb = UILabel()
+    lb.text = "5. 게임을 통해 기억력을 향상시켜보세요!🍑"
     lb.textColor = .white
     lb.font = UIFont.systemFont(ofSize: 20)
     lb.numberOfLines = 2
@@ -71,7 +80,7 @@ class GameInfoViewController : UIViewController {
   //MARK: - configureUI()
   private func configureUI() {
     
-    let stackView = UIStackView(arrangedSubviews: [firstInfo, secondInfo, thirdInfo, fourthInfo])
+    let stackView = UIStackView(arrangedSubviews: [firstInfo, secondInfo, thirdInfo, fourthInfo, fifthInfo])
     stackView.axis = .vertical
     stackView.spacing = 20
     view.addSubview(stackView)
