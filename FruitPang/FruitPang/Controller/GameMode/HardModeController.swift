@@ -73,7 +73,7 @@ class HardModeController : UIViewController {
     collectionView.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
     collectionView.isScrollEnabled = false
     
-    [timeLabel, secondLabel ,collectionView].forEach{
+    [timeLabel, secondLabel ,collectionView].forEach {
       view.addSubview($0)
     }
     

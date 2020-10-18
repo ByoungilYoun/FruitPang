@@ -79,7 +79,7 @@ class NormalModeController : UIViewController {
     collectionView.backgroundColor = .clear
     collectionView.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
     
-    [timeLabel, secondLabel, gameStartButton ,collectionView].forEach{
+    [timeLabel, secondLabel, gameStartButton ,collectionView].forEach {
       view.addSubview($0)
     }
     
