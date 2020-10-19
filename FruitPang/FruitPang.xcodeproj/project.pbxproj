@@ -16,6 +16,7 @@
 		0FA5C341251D2A81007EF9FC /* EasyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C340251D2A81007EF9FC /* EasyModeViewController.swift */; };
 		0FA5C346251D2A94007EF9FC /* NormalModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C345251D2A94007EF9FC /* NormalModeController.swift */; };
 		0FA5C34A251D2A9D007EF9FC /* HardModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5C349251D2A9D007EF9FC /* HardModeController.swift */; };
+		0FD91780253DDD09001E3C8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD9177F253DDD09001E3C8A /* GoogleService-Info.plist */; };
 		0FDC3D462519231600DF42DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC3D452519231600DF42DF /* AppDelegate.swift */; };
 		0FDC3D4F2519231600DF42DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D4E2519231600DF42DF /* Assets.xcassets */; };
 		0FDC3D522519231600DF42DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC3D502519231600DF42DF /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 		0FA5C340251D2A81007EF9FC /* EasyModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyModeViewController.swift; sourceTree = "<group>"; };
 		0FA5C345251D2A94007EF9FC /* NormalModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeController.swift; sourceTree = "<group>"; };
 		0FA5C349251D2A9D007EF9FC /* HardModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardModeController.swift; sourceTree = "<group>"; };
+		0FD9177F253DDD09001E3C8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FDC3D422519231600DF42DF /* FruitPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDC3D452519231600DF42DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDC3D4E2519231600DF42DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				0FDC3D4E2519231600DF42DF /* Assets.xcassets */,
 				0FDC3D502519231600DF42DF /* LaunchScreen.storyboard */,
 				0FDC3D532519231600DF42DF /* Info.plist */,
+				0FD9177F253DDD09001E3C8A /* GoogleService-Info.plist */,
 			);
 			path = FruitPang;
 			sourceTree = "<group>";
@@ -232,11 +235,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FDC3D562519231600DF42DF /* Build configuration list for PBXNativeTarget "FruitPang" */;
 			buildPhases = (
-				0FFBF551253CB91900FEBE0A /* swiftlint */,
 				643A5AA3251217FF302A9BEE /* [CP] Check Pods Manifest.lock */,
+				0FFBF551253CB91900FEBE0A /* swiftlint */,
 				0FDC3D3E2519231600DF42DF /* Sources */,
 				0FDC3D3F2519231600DF42DF /* Frameworks */,
 				0FDC3D402519231600DF42DF /* Resources */,
+				57BAEAFC6463DC29EE06F9A7 /* [CP] Embed Pods Frameworks */,
+				0FD917B5253DF396001E3C8A /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -291,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FFBF554253CB96400FEBE0A /* .swiftlint.yml in Resources */,
+				0FD91780253DDD09001E3C8A /* GoogleService-Info.plist in Resources */,
 				0FDC3D522519231600DF42DF /* LaunchScreen.storyboard in Resources */,
 				0FDC3D4F2519231600DF42DF /* Assets.xcassets in Resources */,
 			);
@@ -299,6 +305,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0FD917B5253DF396001E3C8A /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		0FFBF551253CB91900FEBE0A /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,6 +340,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		57BAEAFC6463DC29EE06F9A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FruitPang/Pods-FruitPang-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FruitPang/Pods-FruitPang-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FruitPang/Pods-FruitPang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		643A5AA3251217FF302A9BEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

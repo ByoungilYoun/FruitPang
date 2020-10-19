@@ -7,5 +7,7 @@ target 'FruitPang' do
 
   # Pods for FruitPang
   pod 'SwiftLint'
+  pod 'Firebase/Core'
+  pod 'Firebase/Crashlytics'
 
 end
