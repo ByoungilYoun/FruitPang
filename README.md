@@ -4,7 +4,7 @@
 
 # FruitPang 🍇
 ## Simple Card Match App 
-- 간단한 과일 카드 맞추기 게임.    
+- 각 난이도 별 시간 제한이 있는 같은 그림 맞추기 카드게임 입니다!
 
 
 ## Architecture 
