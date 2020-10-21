@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="400" src = "https://github.com/ByoungilYoun/FruitPang/blob/master/FruitPang/FruitPangImages/Main%20Icon.png">
+</p>
+
 # FruitPang 🍇
 ## Simple Card Match App 
 - 간단한 과일 카드 맞추기 게임.    
@@ -24,3 +28,22 @@
 |[Swift Lint](https://github.com/realm/SwiftLint) | [Snapkit](https://github.com/SnapKit/SnapKit#contents) |
 |[Firebase/Core](https://firebase.google.com/?hl=ko)|  |
 |[Firebase/Crashlytics](https://firebase.google.com/?hl=ko) | 
+
+---
+## 홈 뷰 및 게임설명 뷰 
+<p align="left">
+  <img width="300" src = "https://github.com/ByoungilYoun/FruitPang/blob/master/FruitPang/FruitPangImages/HomeView.png">
+  <img width="300" src = "https://github.com/ByoungilYoun/FruitPang/blob/master/FruitPang/FruitPangImages/GameInfoView.png">
+</p>
+
+## 메인게임 뷰
+<p align="left">
+  <img width="300" src = "https://github.com/ByoungilYoun/FruitPang/blob/master/FruitPang/FruitPangImages/MainGameView.png">
+</p>
+
+## 각 난이도 뷰(Easy, Normal, Hard)
+<p align="left">
+  <img width="300" src = "https://github.com/ByoungilYoun/FruitPang/blob/master/FruitPang/FruitPangImages/EasyModeView.png">
+  <img width="300" src = "https://github.com/ByoungilYoun/FruitPang/blob/master/FruitPang/FruitPangImages/NormalModeView.png">
+  <img width="300" src = "https://github.com/ByoungilYoun/FruitPang/blob/master/FruitPang/FruitPangImages/HardModeView.png">
+</p>
